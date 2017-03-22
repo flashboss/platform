@@ -53,7 +53,7 @@
     <org.exoplatform.core.version>5.0.x-SNAPSHOT</org.exoplatform.core.version>
     <org.exoplatform.ws.version>5.0.x-SNAPSHOT</org.exoplatform.ws.version>
     <org.exoplatform.jcr.version>5.0.x-SNAPSHOT</org.exoplatform.jcr.version>
-    <org.exoplatform.gatein.portal.version>5.0.x-SNAPSHOT</org.exoplatform.gatein.portal.version>
+    <org.exoplatform.gatein.portal.version>5.0.x-enterprise-skin-SNAPSHOT</org.exoplatform.gatein.portal.version>
     <org.exoplatform.gatein.wci.version>5.0.x-SNAPSHOT</org.exoplatform.gatein.wci.version>
     <org.exoplatform.gatein.pc.version>5.0.x-SNAPSHOT</org.exoplatform.gatein.pc.version>
     <org.exoplatform.gatein.sso.version>5.0.x-SNAPSHOT</org.exoplatform.gatein.sso.version>
