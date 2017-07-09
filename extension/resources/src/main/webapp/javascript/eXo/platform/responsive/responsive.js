@@ -62,7 +62,10 @@
         } else {
           $(this).find('i').toggleClass('uiIconMenu uiIconClose')
           $('body').toggleClass('collapse-left-bar');
-          $('.LeftNavigationTDContainer').css('transition', 'width 0.5s');
+
+          $('.LeftNavigationTDContainer').css('transition', 'width 0.5s').off().on('transitionend', function() {
+            $("#LeftNavigation").getNiceScroll().resize();
+          });
         }
       });
     },

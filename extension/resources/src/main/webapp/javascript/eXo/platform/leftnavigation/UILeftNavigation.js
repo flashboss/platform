@@ -1,10 +1,16 @@
-(function($) {
-    var UILeftNavigation = {
-        resize: function() {
-            var myHeight = $(document).height()-44;
-            var popUpHeight=    $('.LeftNavigationTDContainer');
-            $('.LeftNavigationTDContainer').css('height',myHeight+'px');
-        }
-    };
-    return UILeftNavigation;
+(function ($) {
+  var $leftNavi = $('#LeftNavigation');
+
+  var UILeftNavigation = {
+    init: function () {
+      this.resize();
+      $leftNavi.niceScroll();
+    },
+    resize: function () {
+      var myHeight = $(window).height() - 44;
+      $leftNavi.css('height', myHeight + 'px');
+      $leftNavi.css('overflow', 'hidden');
+    }
+  };
+  return UILeftNavigation;
 })($);

@@ -41,6 +41,9 @@
          <module>jquery</module>
          <as>$</as>
       </depends>
+		 <depends>
+			 <module>jq_nicescroll</module>
+		 </depends>
    </module>
    <module>
 		<name>jquery-touch</name>
@@ -71,6 +74,9 @@
 		<depends>
 			<module>common-utils</module>
 			<as>common_utils</as>
+		</depends>
+		<depends>
+			<module>jq_nicescroll</module>
 		</depends>
    </module>
   <module>
