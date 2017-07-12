@@ -51,7 +51,7 @@
       }
     },
     toggleLeftBar : function() {
-      $('.toggle-left-bar').on('click', function() {
+      $('.toggle-left-bar').off().on('click', function() {
         $body = $('body');
         if ($(window).width()  < 1025) {
           if($body.hasClass('open-left-bar')) {
@@ -362,5 +362,5 @@
   // return {
   //   Responsive : eXo.ecm.Responsive
   // };
-
+  return tabManagerApp
 })($);

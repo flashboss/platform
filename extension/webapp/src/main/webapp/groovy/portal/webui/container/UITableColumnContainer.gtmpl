@@ -17,7 +17,9 @@
 	}
 
  rcontext.getJavascriptManager().require("SHARED/platform-left-navigation", "platformLeftNavigation")
-				 .addScripts("platformLeftNavigation.init();");
+				 .require("SHARED/platform-responsive", "platformResponsive")
+				 .addScripts("platformLeftNavigation.init();")
+				 .addScripts("platformResponsive.toggleLeftBar();");
 	if (uiPortalApp.isEditing())
 	{
 	   JavascriptManager jsManager = rcontext.getJavascriptManager();
