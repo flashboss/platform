@@ -83,9 +83,9 @@
 			<li class="$tabStyleNavigation">
 		""";
         if(node.pageRef != null) {
-            print """<a href="$href" ><i class="$icon"></i><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label">$label</span></a>""";
+          print """<a href="$href" ><i class="$icon" data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label"></i><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label">$label</span></a>""";
         } else {
-            print """<a href="#" ><i class="$icon"></i><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label">$label</span></a>""";
+          print """<a href="#" ><i class="$icon" data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label"></i><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label">$label</span></a>""";
         }
         print """
 			</li>
