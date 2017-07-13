@@ -3,7 +3,7 @@
     init: function () {
       var $leftNavi = $('#LeftNavigation');
       this.resize();
-      $leftNavi.niceScroll();
+      $leftNavi.perfectScrollbar();
     },
     resize: function () {
       var $leftNavi = $('#LeftNavigation');

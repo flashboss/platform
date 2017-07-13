@@ -63,8 +63,9 @@
           $(this).find('i').toggleClass('uiIconMenu uiIconClose')
           $('body').toggleClass('collapse-left-bar');
 
+          $("#LeftNavigation").css('position', 'relative');
           $('.LeftNavigationTDContainer').css('transition', 'width 0.5s').off().on('transitionend', function() {
-            $("#LeftNavigation").getNiceScroll().resize();
+            $("#LeftNavigation").css('position', 'fixed').perfectScrollbar('update');
           });
         }
       });

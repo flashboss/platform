@@ -42,7 +42,7 @@
          <as>$</as>
       </depends>
 		 <depends>
-			 <module>jq_nicescroll</module>
+			 <module>jq_perfect_scrollbar</module>
 		 </depends>
    </module>
    <module>
@@ -76,7 +76,7 @@
 			<as>common_utils</as>
 		</depends>
 		<depends>
-			<module>jq_nicescroll</module>
+			<module>jq_perfect_scrollbar</module>
 		</depends>
    </module>
   <module>
