@@ -9,10 +9,8 @@
       base.Browser.addOnResizeCallback('UILeftNavigation', function() {
         var $leftNavi = $('#LeftNavigation');
         if ($(window).width()  > 1024) {
-          alert('update');
           $leftNavi.css('position', 'fixed').perfectScrollbar();
         } else {
-          alert('destroy');
           $leftNavi.css('position', 'static').perfectScrollbar('destroy');
         }
       });
