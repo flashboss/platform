@@ -11,7 +11,7 @@
         if ($(window).width()  > 1024) {
           $leftNavi.css('position', 'fixed').perfectScrollbar();
         } else {
-          $leftNavi.css('position', 'static').perfectScrollbar('destroy');
+          $leftNavi.css('position', 'static').removeClass('ps').perfectScrollbar('destroy');
         }
       });
     },
