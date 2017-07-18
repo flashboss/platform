@@ -22,4 +22,4 @@
     }
   };
   return UILeftNavigation;
-})($);
+})($, base);
