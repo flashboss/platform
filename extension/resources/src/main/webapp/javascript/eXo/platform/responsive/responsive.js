@@ -52,6 +52,8 @@
     },
     toggleLeftBar : function() {
       $('.toggle-left-bar').off().on('click', function() {
+        $(this).find('i').toggleClass('uiIconMenu uiIconClose');
+
         $body = $('body');
         if ($(window).width()  < 1025) {
           if($body.hasClass('open-left-bar')) {
@@ -59,8 +61,7 @@
           } else {
             tabManagerApp.showLeftPanel();
           }
-        } else {
-          $(this).find('i').toggleClass('uiIconMenu uiIconClose')
+        } else {          
           $('body').toggleClass('collapse-left-bar');
 
           $("#LeftNavigation").css('position', 'relative');
