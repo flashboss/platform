@@ -92,6 +92,8 @@
       $('body,html').css('overflow-y',"hidden");
       $('.mask-layer-right').on('click',function(){
         tabManagerApp.hideLeftPanel();
+        $('.toggle-left-bar i').toggleClass('uiIconMenu uiIconClose');
+        return false;
       });
       leftNavi.addClass('expanded');      
     },
