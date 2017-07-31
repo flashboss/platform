@@ -83,18 +83,21 @@
 			<li class="$tabStyleNavigation">
 		""";
         if(node.pageRef != null) {
-          print """<a href="$href" ><i class="$icon" data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label"></i><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label">$label</span></a>""";
+          print """<a href="$href" ><i class="$icon" data-container="body" data-placement="right" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label"></i><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label">$label</span></a>""";
         } else {
-          print """<a href="#" ><i class="$icon" data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label"></i><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label">$label</span></a>""";
+          print """<a href="#" ><i class="$icon" data-container="body" data-placement="right" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label"></i><span data-placement="bottom" rel="tooltip" data-toggle="tooltip" $title data-original-title="$label">$label</span></a>""";
         }
         print """
 			</li>
 		""" ;
     }
+
+    String title = _ctx.appRes("UICompanyNavigationPortlet.CompanyBar");
 %>
 <div class="uiCompanyNavigationPortlet">
     <h5 class="title accordionBar clearfix">
-        <%= _ctx.appRes("UICompanyNavigationPortlet.CompanyBar")  %> <i class="uiIconArrowRight pull-right"></i>
+      <i class="uiIconMembership" style="display: none" data-container="body" data-placement="right" rel="tooltip" data-toggle="tooltip" title="$title"></i> 
+      <span>$title</span> <i class="uiIconArrowRight pull-right"></i>
     </h5>
 	<div class="accordionCont">
     <%

@@ -61,8 +61,10 @@
           } else {
             tabManagerApp.showLeftPanel();
           }
-        } else {          
-          $('body').toggleClass('collapse-left-bar');
+        } else {
+          var collapseClass = 'collapse-left-bar';
+          $('body').toggleClass(collapseClass);
+          window.sessionStorage.setItem(eXo.env.portal.userName + collapseClass, $('body').hasClass(collapseClass));
 
           $("#LeftNavigation").css('position', 'relative');
           $('.LeftNavigationTDContainer').css('transition', 'width 0.5s').off().on('transitionend', function() {
