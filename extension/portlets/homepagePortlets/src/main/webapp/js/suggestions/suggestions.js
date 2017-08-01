@@ -111,7 +111,7 @@
                         $item.find(".peopleAction").removeClass('active').hide();
                     });
 
-                    $("#"+item.suggestionId+" a.connect").live("click", function(){
+                    $("#"+item.suggestionId).on('click', "a.connect", function(){
                         $.getJSON("/rest/homepage/intranet/people/contacts/connect/"+item.suggestionId, null);
 
                         if($("#suggestions").children().length == 1) {
@@ -134,7 +134,7 @@
                         }
                     });
 
-                    $("#"+item.suggestionId+" a.ignore").live("click", function(){
+                    $("#"+item.suggestionId).on('click', "a.ignore", function(){
                         $.ajax({
                             url: "/rest/v1/social/usersRelationships/",
                             contentType: "application/json",
