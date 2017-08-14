@@ -51,9 +51,21 @@
       }
     },
     toggleLeftBar : function() {
-      $('.toggle-left-bar').off().on('click', function() {
-        $(this).find('i').toggleClass('uiIconMenu uiIconClose');
+      var collapseClass = 'collapse-left-bar';
+      var $menuButton = $('.UIToolbarContainer .toggle-left-bar');
+      var $closeButton = $('.uiCompanyNavigationPortlet .uiIconClose');
+      var collapsed = window.sessionStorage.getItem(eXo.env.portal.userName + collapseClass);
+      if (collapsed == 'false') {
+        $closeButton.show();
+        $menuButton.hide();
+      } else {
+        $closeButton.hide();
+        $menuButton.show();
+      }
 
+      var toggle = function() {
+        $menuButton.toggle();
+        $closeButton.toggle();
         $body = $('body');
         if ($(window).width()  < 1025) {
           if($body.hasClass('open-left-bar')) {
@@ -62,16 +74,17 @@
             tabManagerApp.showLeftPanel();
           }
         } else {
-          var collapseClass = 'collapse-left-bar';
           $('body').toggleClass(collapseClass);
           window.sessionStorage.setItem(eXo.env.portal.userName + collapseClass, $('body').hasClass(collapseClass));
 
-          $("#LeftNavigation").css('position', 'relative');
-          $('.LeftNavigationTDContainer').css('transition', 'width 0.5s').off().on('transitionend', function() {
-            $("#LeftNavigation").css('position', 'fixed').perfectScrollbar('update');
+          $('.LeftNavigationTDContainer').off().on('transitionend', function() {
+            $("#LeftNavigation").perfectScrollbar('update');
           });
         }
-      });
+      };
+
+      $('.toggle-left-bar').off().on('click', toggle);
+      $('.uiCompanyNavigationPortlet .uiIconClose').off().on('click', toggle);
     },
     toggleRightBar : function() {
       $('.toggle-right-bar').on('click', function() {
