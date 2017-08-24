@@ -52,20 +52,16 @@
     },
     toggleLeftBar : function() {
       var collapseClass = 'collapse-left-bar';
-      var $menuButton = $('.UIToolbarContainer .toggle-left-bar');
-      var $closeButton = $('.uiCompanyNavigationPortlet .uiIconClose');
+      var $menuButton = $('.uiCompanyNavigationPortlet .toggle-left-bar i');
       var collapsed = window.sessionStorage.getItem(eXo.env.portal.userName + collapseClass);
-      if (collapsed == 'false') {
-        $closeButton.show();
-        $menuButton.hide();
+      if (collapsed === 'false') {
+        $menuButton.attr('class', 'uiIconEcmsGoBack');
       } else {
-        $closeButton.hide();
-        $menuButton.show();
+        $menuButton.attr('class', 'uiIconMenu');
       }
 
       var toggle = function() {
-        $menuButton.toggle();
-        $closeButton.toggle();
+        $menuButton.toggleClass('uiIconMenu uiIconEcmsGoBack');
         $body = $('body');
         if ($(window).width()  < 1025) {
           if($body.hasClass('open-left-bar')) {
@@ -84,7 +80,6 @@
       };
 
       $('.toggle-left-bar').off().on('click', toggle);
-      $('.uiCompanyNavigationPortlet .uiIconClose').off().on('click', toggle);
     },
     toggleRightBar : function() {
       $('.toggle-right-bar').on('click', function() {
@@ -105,7 +100,6 @@
       $('body,html').css('overflow-y',"hidden");
       $('.mask-layer-right').on('click',function(){
         tabManagerApp.hideLeftPanel();
-        $('.toggle-left-bar i').toggleClass('uiIconMenu uiIconClose');
         return false;
       });
       leftNavi.addClass('expanded');      
