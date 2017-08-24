@@ -96,8 +96,7 @@
 %>
 <div class="uiCompanyNavigationPortlet">
     <h5 class="title accordionBar clearfix">
-      <i class="uiIconClose" style="display: none"></i>
-      <i class="uiIconMembership" style="display: none" data-container="body" data-placement="right" rel="tooltip" data-toggle="tooltip" title="$title"></i> 
+      <a href="javascript:void(0)" class="mobile-visible toggle-left-bar"><i></i></a>
       <span>$title</span> <i class="uiIconArrowRight pull-right"></i>
     </h5>
 	<div class="accordionCont">
