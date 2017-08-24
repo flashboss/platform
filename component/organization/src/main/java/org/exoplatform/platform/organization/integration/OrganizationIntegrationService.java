@@ -436,6 +436,7 @@ public class OrganizationIntegrationService implements Startable {
 
     EventType event = EventType.valueOf(eventType);
     Session session = null;
+    picketLinkIDMCacheService.invalidateAll();
     switch (event) {
       case DELETED: {
         if (LOG.isDebugEnabled()) {
