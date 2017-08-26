@@ -1,5 +1,6 @@
 package org.exoplatform.platform.common.software.register;
 
+import static org.exoplatform.platform.common.account.setup.web.AccountSetup.PORTAL_HOME;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang.StringUtils;
 import org.exoplatform.commons.info.MissingProductInformationException;
@@ -486,7 +487,7 @@ public class UnlockService implements Startable {
             }
             if (!UnlockService.isUnlocked())
             request.getRequestDispatcher("WEB-INF/jsp/welcome-screens/unlockTrial.jsp").include(request, response);
-            else response.sendRedirect("/portal/intranet");
+            else response.sendRedirect(PORTAL_HOME);
         }
 
         @Override
