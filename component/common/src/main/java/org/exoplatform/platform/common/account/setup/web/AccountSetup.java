@@ -40,7 +40,7 @@ public class AccountSetup extends HttpServlet {
     private final static String PLATFORM_DEVELOPERS_GROUP = "/developers";
     private final static String PLATFORM_PLATFORM_USERS_GROUP ="/platform/users";
     private final static String MEMBERSHIP_TYPE_MANAGER = "*";
-    private final static String INTRANET_HOME = "/portal/intranet";
+    private final static String PORTAL_HOME = "/portal";
     private final static String INITIAL_URI_PARAM = "initialURI";
     private final static String ACCOUNT_SETUP_BUTTON = "setupbutton";
     private final static String SETUP_SKIP_BUTTON = "skipform";
@@ -153,7 +153,7 @@ public class AccountSetup extends HttpServlet {
             RequestLifeCycle.end();
         }
         // Redirect to requested page
-        redirectURI = "/" + PortalContainer.getCurrentPortalContainerName() + "/login?" + "username=" + URLEncoder.encode(userNameAccount, "UTF-8") + "&password=" + userPasswordAccount + "&initialURI=" + INTRANET_HOME;
+        redirectURI = "/" + PortalContainer.getCurrentPortalContainerName() + "/login?" + "username=" + URLEncoder.encode(userNameAccount, "UTF-8") + "&password=" + userPasswordAccount + "&initialURI=" + PORTAL_HOME;
         }
         response.setCharacterEncoding("UTF-8");
         response.sendRedirect(redirectURI);
