@@ -1,5 +1,6 @@
 package org.exoplatform.platform.common.account.setup.web;
 
+import static org.exoplatform.platform.common.account.setup.web.AccountSetup.PORTAL_HOME;
 import org.exoplatform.commons.api.settings.SettingService;
 import org.exoplatform.commons.api.settings.SettingValue;
 import org.exoplatform.commons.api.settings.data.Context;
@@ -16,7 +17,6 @@ import java.io.IOException;
  * @author <a href="fbradai@exoplatform.com">Fbradai</a>
  */
 public class AccountSetupViewServlet extends HttpServlet {
-    private final static String INTRANET_HOME_PAGE = "/portal/intranet";
     private final static String AS_JSP_RESOURCE = "/WEB-INF/jsp/welcome-screens/accountSetup.jsp";
     SettingService settingService ;
     @Override
@@ -26,7 +26,7 @@ public class AccountSetupViewServlet extends HttpServlet {
         SettingValue accountSetupNode = settingService.get(Context.GLOBAL, Scope.GLOBAL, AccountSetup.ACCOUNT_SETUP_NODE);
         if(accountSetupNode != null)
             setupDone = true;
-        if(setupDone) response.sendRedirect(INTRANET_HOME_PAGE);
+        if(setupDone) response.sendRedirect(PORTAL_HOME);
         else getServletContext().getRequestDispatcher(AS_JSP_RESOURCE).forward(request, response);
     }
 
