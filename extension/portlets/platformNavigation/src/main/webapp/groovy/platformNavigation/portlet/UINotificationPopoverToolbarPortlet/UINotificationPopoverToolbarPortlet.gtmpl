@@ -1,3 +1,7 @@
+<%
+  import org.exoplatform.social.webui.Utils;
+  def notificationsLink = Utils.getURI("allNotifications");
+%>
 <div class="uiNotificationPopoverToolbarPortlet clearfix" style="<%=(uicomponent.isWebActive() ? "" : "display:none")%>" id="$uicomponent.id">
 	<div style="display:none" class="all-actions">
 		<div id="ClusterUpdateCachedLink"><%=uicomponent.buildResourceURL(uicomponent.CLUSTER_NOTIFICATION_POPOVER_LIST)%></div>
@@ -27,7 +31,7 @@
 				<ul class="displayItems">
 				</ul>
 			</li>
-			<li class="actionLink"><div><a class="btn" href="/portal/intranet/allNotifications/"><%=_ctx.appRes("UINotificationPopoverToolbarPortlet.label.ViewAll") %></a></div></li>
+			<li class="actionLink"><div><a class="btn" href="<%= notificationsLink %>"><%=_ctx.appRes("UINotificationPopoverToolbarPortlet.label.ViewAll") %></a></div></li>
 		</ul>
 	</div>
 </div>
