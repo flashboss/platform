@@ -1,5 +1,7 @@
 <%
     import org.apache.commons.lang.StringEscapeUtils;
+    import org.exoplatform.social.webui.Utils;
+    def editProfileLink = Utils.getURI("edit-profile");
 %>
 <div class="uiBreadcumbsNavigationPortlet clearfix" id="$uicomponent.id">
 <%
@@ -29,7 +31,7 @@
     <div class="breadcumbEntry">
       <div class="name">$nodeName</div>
     <% if (uicomponent.isOwner() && isUserUrl && !uicomponent.isEditProfilePage()) { %>
-      <a class="changeAvatar" onclick="window.location.href=window.location.origin + '/portal/intranet/edit-profile'" 
+      <a class="changeAvatar" onclick="window.location.href=window.location.origin + '<%= editProfileLink %>'" 
          href="javascript:void(0)"><i class="uiIconEdit uiIconLightGray"></i> <%=_ctx.appRes("UIBreadCrumbsNavigationPortlet.label.EditProfile")%></a>
     <% } %>
     </div>
