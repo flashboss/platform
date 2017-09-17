@@ -42,6 +42,7 @@
    	sdf1.setCalendar(CalendarPortletUtils.getInstanceOfCurrentCalendar());
    	sdf2.setCalendar(CalendarPortletUtils.getInstanceOfCurrentCalendar());
    	sdf3.setCalendar(CalendarPortletUtils.getInstanceOfCurrentCalendar());
+    def calendarLink = CalendarPortletUtils.getURI("calendar");
 %>
 <div class="calendarPortlet ">
 	<div class="calendarPortletData uiBox">
@@ -78,7 +79,7 @@
 						def eventCss = "";
 							if (new Date().compareTo(sdf4.parse(sdf3.format(event.toDateTime))) > 0) eventCss = "pastEvent";
 							else eventCss = "eventItems" ;
-						def href="/portal/intranet/calendar/details/"+event.id;
+						def href=calendarLink+"/details/"+event.id;
 					%>
 						<li class="${eventCss}"  id="${event.id}">
 							<div class="${color}">
@@ -131,7 +132,7 @@
 							if ((task.eventState).equals(CalendarEvent.COMPLETED)) cssClass = "taskCompleted";
 							else if (((task.eventState).equals(CalendarEvent.NEEDS_ACTION)) && ((sdf4.parse(sdf3.format(task.toDateTime))).compareTo(new Date()) > 0)) cssClass = "taskNotCompleted";
 							else if (((task.eventState).equals(CalendarEvent.NEEDS_ACTION)) && ((sdf4.parse(sdf3.format(task.toDateTime))).compareTo(new Date()) < 0))cssClass = "taskLateNotCompleted"  ;
-							def href="/portal/intranet/calendar/details/"+task.id;
+							def href=calendarLink+"/details/"+task.id;
 					%>
 							<li class="${cssClass}">
 							<a href="${href}" class="eventSummary ">
